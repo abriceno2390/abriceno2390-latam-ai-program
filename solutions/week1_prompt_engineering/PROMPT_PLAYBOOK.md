@@ -21,7 +21,18 @@ hallucination, verbosity, shallow, drift (format), persona-loss, json-break, con
 ## Results Table (Populate During Lab)
 | Prompt Pattern | Example Used | Model | Adherence (1–5) | Reasoning (1–5) | Style (1–5) | Format (1–5) | Failure Modes | Notes | Reuse? (Y/N) |
 |----------------|--------------|-------|------------------|-----------------|-------------|--------------|---------------|-------|--------------|
-
+Simple| Explain photosynthesis|llama3|5|5|5|5|verbosity|Provides a detailed explanation.|Y
+Simple|Explain Photosynthesis|Mistral|3|3|3|5|shallow|Provides more detailed general explanation for the concept of photosynthesis but not in the breakdown of the summary.|Y
+Simple|Explain Photosynthesis|Open AI|5|5|5|5|verbosity|Good expalanation, a bit summarized the explanation.|Y
+Simple|Explain Photosynthesis|Gemini|5|5|5|5|verbosity|Is the most detailed and elaborate explanation, why I say verbosity, because adds an equation which is quite complex for an initial research.|Y
+Role|You are a biology professor. Explain photosynthesis to a high school student.|llama3|3|5|3|5|shallow, persona-losss|It assummed that the student already knew about photosynthesis concepts, so it missed an initial explanation of the concept.|N
+Role|You are a biology professor. Explain photosynthesis to a high school student.|Mistral|5|3|3|5|shallow,persona-loss|The response is a good complement for the response given by llama3.|N
+Role|You are a biology professor. Explain photosynthesis to a high school student.|OpenAI|5|5|5|5|no failures|Excellent explanation, kept the role and even provided a fun fact in the answer.|Y
+Role|You are a biology professor. Explain photosynthesis to a high school student.|Gemini|5|5|5|5|no failures|Good detailed explanation, it even provided supporting materials for students to further see details.|Y
+Chain-of-Thought|Explain photosynthesis step-by-step, start with inputs (what plants need) and end with outputs|llama3|3|5|5|5|shallow|Does not explain the concept, jumps directly to inputs and outputs.|N
+Chain-of-Thought|Explain photosynthesis step-by-step, start with inputs (what plants need) and end with outputs|Mistral|5|5|3|5|shallow|I see shallow answer since if fails to give a step by step explanation as llama3 did, but overall is a much better answer than llama3 provided.  It gave explanation of the concept, details of stages and clear inpunts and outputs.|Y
+Chain-of-Thought|Explain photosynthesis step-by-step, start with inputs (what plants need) and end with outputs|OpenAI|5|5|5|5|no failure|Step by step explanation adding inputs and outputs providing good details of the concept.  And a final one line summary.|Y
+Chain-of-Thought|Explain photosynthesis step-by-step, start with inputs (what plants need) and end with outputs|Gemini|5|5|5|5|no failures|Maybe this reponse is a bit better than Open AI since it explains the concept first and then complements very well with inputs and outputs.  But there is no summary of the overall concept.|Y
 ## Model Summary (After Initial Pass)
 | Capability | Best Model(s) | Evidence Snippet | Notes |
 |------------|---------------|------------------|-------|
