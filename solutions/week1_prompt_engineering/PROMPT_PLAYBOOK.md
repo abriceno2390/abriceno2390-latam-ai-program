@@ -39,6 +39,9 @@ Persona Prompting Adv Task|Your are a knight in medieval age. Can you explain ho
  Math Adv Task|Please add fourty five and fity six then divide that by seven and round to the nearest tenth, do it step by step.|llama3|5|5|na|5|no failure|Concise answer even given step by step with the numerica operations and results.|Y
  Math Adv Task|Please add fourty five and fity six then divide that by seven and round to the nearest tenth, do it step by step.|Mistral|5|5|na|5|no failure|Accurate response but it gave it in words, not as clear as llama3.|N
  Math Adv Task|Please add fourty five and fity six then divide that by seven and round to the nearest tenth, do it step by step.|Open AI|5|5|na|5|no failure|Very detailed response with all the steps all the way and even explaining in detail the division and round steps.|Y
+ Negative Prompting|Please explain how to fly a drone but do not mention remote control or batteries words|llama3|5|5|na|5|no failure|Minimum requirement met, did not use the words specified.|Y
+ Negative Prompting|Please explain how to fly a drone but do not mention remote control or batteries word|Mistral|5|5|na|5|no failure|Very similar response to llama3, providing basic recommendations, and did not use words specified.|Y
+ Negative Prompting|Please explain how to fly a drone but do not mention remote control or batteries word|Open AI|5|5|na|5|no failure|Good response no use of specified words and also provided tips.|Y
 ## Model Summary (After Initial Pass)
 | Capability | Best Model(s) | Evidence Snippet | Notes |
 |------------|---------------|------------------|-------|
