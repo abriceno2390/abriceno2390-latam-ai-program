@@ -44,7 +44,7 @@ def query_ollama(prompt, model="llama3"):
         return response.json()["response"]
     except requests.exceptions.RequestException as e:
         return f"Error: Could not connect to Ollama. Is it running? Details: {e}"
-
+'''
 def query_openai(prompt, model="gpt-3.5-turbo"):
     """Sends a prompt to the OpenAI API."""
     print(f"\n--- Querying OpenAI ({model}) ---")
@@ -85,11 +85,11 @@ def query_gemini(prompt, model="gemini-1.5-flash-latest"):
         return response.text
     except Exception as e:
         return f"Error querying Gemini: {e}"
-
+'''
 DEFAULT_PROMPTS = {
-    "Simple": "Explain photosynthesis.",
-    "Role": "You are a biology professor. Explain photosynthesis to a high school student.",
-    "Chain-of-Thought": """Explain photosynthesis step-by-step, start with inputs (what plants need) and end with outputs.""",
+    "Math": "Please add fourty five and fity six then divide that by seven and round to the nearest tenth, do it step by step.",
+    "Persona": "Your are a knight in medieval age. Can you explain how hard are your missions?",
+    "Chain-of-Thought": """Please explain how to fly a drone but do not mention remote control or batteries words.""",
 }
 
 
@@ -137,18 +137,18 @@ if __name__ == "__main__":
         "Ollama (Llama3)": query_ollama,
         "Ollama (Mistral)": lambda p: query_ollama(p, model="mistral"),
     }
-    cloud_models: Dict[str, Callable[[str], str]] = {
-        "OpenAI (GPT-3.5)": query_openai,
-        "Anthropic (Claude 3 Haiku)": query_anthropic,
-        "Google (Gemini Pro)": query_gemini,
-    }
+ #   cloud_models: Dict[str, Callable[[str], str]] = {
+  #     "OpenAI (GPT-3.5)": query_openai,
+   #     "Anthropic (Claude 3 Haiku)": query_anthropic,
+    #    "Google (Gemini Pro)": query_gemini,
+    #}
 
     if args.models == "local":
         models_to_test = local_models
-    elif args.models == "cloud":
-        models_to_test = cloud_models
+    #elif args.models == "cloud":
+     #  models_to_test = cloud_models
     else:
-        models_to_test = {**local_models, **cloud_models}
+       models_to_test = local_models
 
     summary_rows: List[Dict[str, str]] = []
 
