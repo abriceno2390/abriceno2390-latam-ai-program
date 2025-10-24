@@ -1,0 +1,6 @@
+# Week 3 MCP Intro requirements
+# Local LLM & Agnos integration (optional)
+ollama>=0.1.0
+# agnos or agnos-ai library name may vary; keep both commented to avoid accidental install if not needed
+# agnos
+# agnos-ai
