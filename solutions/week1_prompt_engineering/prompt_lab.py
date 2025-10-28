@@ -87,9 +87,9 @@ def query_gemini(prompt, model="gemini-1.5-flash-latest"):
         return f"Error querying Gemini: {e}"
 
 DEFAULT_PROMPTS = {
-    "Simple": "Explain photosynthesis.",
-    "Role": "You are a biology professor. Explain photosynthesis to a high school student.",
-    "Chain-of-Thought": """Explain photosynthesis step-by-step, start with inputs (what plants need) and end with outputs.""",
+    "Simple": "What is the weather in Egypt?",
+    "Role": "You are an inexperienced meteorologist. Explain the weather in Egypt.",
+    "Chain-of-Thought": """Explain the weather in Egypt, reasons for how it is and then a summary of the weather behavior.""",
 }
 
 
